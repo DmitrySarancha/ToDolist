@@ -1,0 +1,131 @@
+:root {
+    --fLobster: 'Lobster', cursive;
+    --fSansPro: 'Source Sans Pro', sans-serif;
+    /* btn style */
+    --buttonBgColor: #159ec0;
+    --buttonBgColorHover: #1a85a0;
+    --buttonTextColor: #fff;
+    --buttonTextColorHover: #eee;
+}
+
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html {
+    font-size: 16px;
+    font-family: var(--fSansPro);
+}
+body {
+    display: grid;
+    place-items: center;
+    background: linear-gradient(135deg, #691881, #a13022);
+    block-size: 100vh;
+}
+.container {
+    inline-size: clamp(400px, 40%, 50%);
+    border: 2px solid #fff;
+    border-radius: 5px;
+    padding: 1.5rem 2rem;
+}
+.newTask {
+    display: flex;
+    flex-flow: row nowrap;
+    background: #fff;
+    padding: 1.5rem 1rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+}
+.newTask input {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 3 1 auto;
+
+    font-family: inherit;
+    block-size: 2rem;
+    font-size: 1em;
+    padding: 1rem;
+    outline: none;
+    border: 2px solid #d1d2d4;
+    border-radius: 5px;
+    color: #111;
+}
+.newTask input::placeholder {
+    font-family: inherit;
+    font-size: 0.9rem;
+    text-transform: capitalize;
+}
+.newTask input:focus {
+    --inputFocusColor: #1a85a0;
+    outline: none;
+    border-color: var(--inputFocusColor);
+    box-shadow: 0 3px 15px var(--inputFocusColor);
+}
+.newTask button {
+    -webkit-appearance: none;
+    appearance: none;
+    flex: 1 1 auto;
+
+    margin-inline-start: 1rem;
+    font-family: inherit;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 5px;
+    transition: background 350ms ease, color 350ms ease;
+    background: var(--buttonBgColor);
+    font-size: 1em;
+    color: var(--buttonTextColor);
+    cursor: pointer;
+}
+.newTask button:hover {
+    background: var(--buttonBgColorHover);
+    color: var(--buttonTextColorHover);
+}
+
+.tasks {
+    background-color: #fff;
+    padding: 1.5rem 1rem;
+    margin-block-start: 3rem;
+    border-radius: 15px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    inline-size: 100%;
+}
+/* js magic adding html */
+
+.task {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    block-size: 3rem;
+    border-block-end: 1px solid #bbbbbb;
+    padding: 0.5rem 1rem;
+    inline-size: 100%;
+}
+.task span {
+    font-family: inherit;
+    font-size: 1em;
+}
+.task button {
+    -webkit-appearance: none;
+    appearance: none;
+    border: none;
+    block-size: 100%;
+    inline-size: 2rem;
+    background-color: var(--buttonBgColor);
+    color: var(--buttonTextColor);
+    border-radius: 6px;
+    transition: background 350ms ease, color 350ms ease;
+}
+.task button:hover {
+    background-color: var(--buttonBgColorHover);
+    color: var(--buttonTextColorHover);
+    cursor: pointer;
+}
+
+.completed {
+    text-decoration: line-through;
+}
