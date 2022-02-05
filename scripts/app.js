@@ -2,11 +2,15 @@ const btnAdd = document.querySelector('.add');
 const taskInput = document.querySelector('.newTask input');
 const tasks = document.querySelector('.tasks');
 
+const BOX_SHADOW = '0 15px 30px rgba(0, 0, 0, 0.3)';
+const BORDER_RADIUS = '15px';
 btnAdd.addEventListener('click', () => {
-    if (taskInput.lenght == 0) {
-        alert('input pust');
+    if (taskInput.value == '') {
+        alert('Введите что нибудь!');
     } else {
-        tasks.innerHTML = `
+        tasks.insertAdjacentHTML(
+            'afterbegin',
+            `
 			<div class="task">
 				<span class="taskName">
 					${taskInput.value}
@@ -15,20 +19,19 @@ btnAdd.addEventListener('click', () => {
 					<i class="fas fa-trash"></i>
 				</button>
 			</div>
-		`;
+		`
+        );
 
-        const currentTask = document.querySelectorAll('.del');
-        currentTask.forEach((el) => {
-            el.addEventListener('click', () => {
-                el.parentNode.remove();
-            });
+        const task = document.querySelector('.task');
+        task.addEventListener('click', () => {
+            task.classList.toggle('completed');
         });
 
-        const task = document.querySelectorAll('.task');
-        task.forEach((el) => {
-            el.addEventListener('click', () => {
-                el.classList.toggle('completed');
-            });
+        const currentTask = document.querySelector('.del');
+        currentTask.addEventListener('click', () => {
+            currentTask.parentNode.remove();
         });
+
+        taskInput.value = '';
     }
 });

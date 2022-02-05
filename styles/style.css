@@ -86,11 +86,9 @@ body {
 }
 
 .tasks {
-    background-color: #fff;
+    /* background-color: #fff; */
     padding: 1.5rem 1rem;
     margin-block-start: 3rem;
-    border-radius: 15px;
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
     inline-size: 100%;
 }
 /* js magic adding html */
@@ -104,10 +102,12 @@ body {
     border-block-end: 1px solid #bbbbbb;
     padding: 0.5rem 1rem;
     inline-size: 100%;
+    margin-block-start: 2rem;
 }
 .task span {
     font-family: inherit;
     font-size: 1em;
+    cursor: pointer;
 }
 .task button {
     -webkit-appearance: none;
