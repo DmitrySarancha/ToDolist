@@ -2,8 +2,6 @@ const btnAdd = document.querySelector('.add');
 const taskInput = document.querySelector('.newTask input');
 const tasks = document.querySelector('.tasks');
 
-const BOX_SHADOW = '0 15px 30px rgba(0, 0, 0, 0.3)';
-const BORDER_RADIUS = '15px';
 btnAdd.addEventListener('click', () => {
     if (taskInput.value == '') {
         alert('Введите что нибудь!');
